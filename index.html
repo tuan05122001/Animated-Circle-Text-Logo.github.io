@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Circle Text Logo</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/avatar.png">
+        </div>
+        <h2 class="text">Hong Nguyet (Lu) - To be Better - </h2>
+    </div>
+    <script>
+        const text = document.querySelector(".text");
+        //first way:
+        //text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+        //second way:
+        text.innerHTML = text.textContent.split("").map(
+            (char, i) =>
+            `<span style="transform: rotate(${i*10.5}deg)">${char}</span>`
+        ).join("");
+
+    </script>
+</body>
+</html>
